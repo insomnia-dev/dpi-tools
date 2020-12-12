@@ -135,3 +135,46 @@ export const detectPhysChunkFromDataUrl = (data) => {
   // if b64index === -1 chunk is not found
   return b64index;
 };
+
+export const isBufferPng = (buffer) => {
+  if (buffer.length < 8) {
+    return null;
+  }
+  return (
+    buffer[0] === 137 &&
+    buffer[1] === 80 &&
+    buffer[2] === 78 &&
+    buffer[3] === 71 &&
+    buffer[4] === 13 &&
+    buffer[5] === 10 &&
+    buffer[6] === 26 &&
+    buffer[7] === 10
+  );
+};
+
+export const isBufferJpeg = (buffer) => {
+  if (buffer.length < 3) {
+    return null;
+  }
+
+  return buffer[0] === 255 && buffer[1] === 216 && buffer[2] === 255;
+};
+
+export const getType = (buffer) => {
+  if (isBufferJpeg(buffer)) {
+    return JPEG;
+  }
+
+  if (isBufferPng(buffer)) {
+    return PNG;
+  }
+
+  return '';
+};
+
+export const mergeTypedArrays = (a, b) => {
+  const c = new a.constructor(a.length + b.length);
+  c.set(a);
+  c.set(b, a.length);
+  return c;
+};

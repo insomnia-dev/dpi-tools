@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import fs from 'fs';
 import btoa from 'btoa';
 import atob from 'atob';
-import { changeDpiDataUrl, changeDpiBlob } from '../src/index';
+import { changeDpiDataUrl, changeDpiBlob, changeDpiBuffer } from '../src/index';
 
 const FileReader = () => {};
 FileReader.prototype.readAsArrayBuffer = function (buffer) {
@@ -71,5 +71,21 @@ describe('It can convert dpi', () => {
   //     fs.writeFileSync(`${__dirname}/test.png`, blob);
   //     expect(Buffer.compare(blob, a)).to.equal(0);
   //   });
+  // });
+
+  it('JPEG conversion buffer', () => {
+    const jpeg123 = fs.readFileSync(`${__dirname}/jpeg123.jpg`);
+    const jpeg456 = fs.readFileSync(`${__dirname}/jpeg456.jpg`);
+    const converted = changeDpiBuffer(jpeg123, 456, 'image/jpeg');
+    expect(Buffer.compare(converted, jpeg456)).to.equal(0);
+    expect(Buffer.compare(converted, jpeg123)).to.not.equal(0);
+  });
+
+  // it('PNG conversion buffer', () => {
+  //   const test415 = fs.readFileSync(`${__dirname}/test415.png`);
+  //   const test830 = fs.readFileSync(`${__dirname}/test830.png`);
+  //   const converted = changeDpiBuffer(test415, 830, 'image/png');
+  //   expect(Buffer.compare(converted, test830)).to.equal(0);
+  //   expect(Buffer.compare(converted, test415)).to.not.equal(0);
   // });
 });
