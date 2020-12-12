@@ -8,7 +8,7 @@ export default [
   {
     input: 'src/index.js',
     output: {
-      name: 'changeDpi',
+      name: 'dpiTools',
       file: pkg.browser,
       format: 'umd',
     },

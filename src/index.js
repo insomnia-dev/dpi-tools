@@ -1,6 +1,6 @@
 import changeDpiDataUrl from './change-dpi-data-url';
 import changeDpiBlob from './change-dpi-blob';
 
-const changeDpi = { changeDpiDataUrl, changeDpiBlob };
+const dpiTools = { changeDpiDataUrl, changeDpiBlob };
 
-export { changeDpi as default, changeDpiDataUrl, changeDpiBlob };
+export { dpiTools as default, changeDpiDataUrl, changeDpiBlob };

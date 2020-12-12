@@ -1,10 +1,10 @@
 {
-  "name": "change-dpi",
+  "name": "dpi-tools",
   "version": "1.0.5",
   "description": "Quickly change the dpi for an image without re-enconding",
-  "main": "dist/change-dpi.cjs.js",
-  "module": "dist/change-dpi.esm.js",
-  "browser": "dist/change-dpi.js",
+  "main": "dist/dpi-tools.cjs.js",
+  "module": "dist/dpi-tools.esm.js",
+  "browser": "dist/dpi-tools.js",
   "files": [
     "dist",
     "es",
@@ -19,9 +19,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/insomnia-dev/change-dpi"
+    "url": "https://github.com/insomnia-dev/dpi-tools"
   },
-  "bugs": "https://github.com/insomnia-dev/change-dpi/issues",
+  "bugs": "https://github.com/insomnia-dev/dpi-tools/issues",
   "keywords": [
     "dpi",
     "ediot",
