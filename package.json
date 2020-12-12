@@ -1,6 +1,6 @@
 {
   "name": "change-dpi",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Quickly change the dpi for an image without re-enconding",
   "main": "dist/change-dpi.cjs.js",
   "module": "dist/change-dpi.esm.js",
