@@ -135,5 +135,3 @@ export const detectPhysChunkFromDataUrl = (data) => {
   // if b64index === -1 chunk is not found
   return b64index;
 };
-
-export default detectPhysChunkFromDataUrl;
